@@ -31,6 +31,12 @@ app.use(cors({
 }));
 
 app.use(express.json());
+if (!process.env.MONGO_URL) {
+  console.error("❌ ERROR: MONGO_URL is not defined in environment variables.");
+  console.error("Please create a .env file in the backend directory based on .env-sample.");
+  process.exit(1);
+}
+
 mongoose
   .connect(
     process.env.MONGO_URL,
@@ -45,7 +51,8 @@ mongoose
     //fetchDrugs();
   })
   .catch((err) => {
-    console.log("❌ Error connecting to MongoDB", err);
+    console.error("❌ Error connecting to MongoDB:", err.message);
+    process.exit(1);
   });
 
 const port = process.env.PORT || 5000;

@@ -1,0 +1,28 @@
+name: Documentation Fix
+description: Suggest a fix or improvement to the documentation
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve our documentation!
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Description of the issue
+      description: Describe the problem with the current documentation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-changes
+    attributes:
+      label: Proposed changes
+      description: What changes do you suggest?
+    validations:
+      required: true
+  - type: input
+    id: file-location
+    attributes:
+      label: File location (if known)
+      description: Which file needs to be updated?

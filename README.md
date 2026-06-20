@@ -89,36 +89,30 @@ cd pharmanear
 
 ### 2. Environment Configuration
 
-Create `.env` files in both `frontend/` and `backend/` directories.
+You can use the provided template to create your `.env` files. We have a root `.env.example` that shows the required variables.
 
-#### Frontend (.env in `frontend/`)
-```bash
-VITE_BACKEND_URL=http://localhost:5000
-```
-
-#### Backend (.env in `backend/`)
-```bash
-PORT=5000
-MONGO_URL=mongodb://localhost:27017/pharmanear
-JWT_SECRET=your_super_secure_jwt_secret_key_here
-CORS_ORIGIN=http://localhost:5173
-```
+Copy the required variables and create `.env` files in both `frontend/` and `backend/` directories, or refer to their respective `.env-sample` files.
 
 > **Note:** Replace `your_super_secure_jwt_secret_key_here` with a strong, unique secret. For production, use environment variables provided by Render.
 
-### 3. Backend Setup
+### 3. Installation
+Install all dependencies for both frontend and backend using the root setup script:
+```bash
+pnpm install:all
+```
+
+### 4. Backend Setup
 ```bash
 cd backend
-pnpm install  # or npm install
-pnpm start    # or npm start / node server.js
+pnpm start
 ```
 The backend will run on [http://localhost:5000](http://localhost:5000).
 
-### 4. Frontend Setup
+### 5. Frontend Setup
+Open a new terminal and run:
 ```bash
-cd ../frontend
-pnpm install  # or npm install
-pnpm dev      # or npm run dev
+cd frontend
+pnpm dev
 ```
 The frontend will run on [http://localhost:5173](http://localhost:5173).
 
