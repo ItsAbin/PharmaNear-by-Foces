@@ -8,6 +8,7 @@ import Medicine from "./models/medicine.js";
 import Pharmacy from "./models/pharmacy.js";
 import Stock from "./models/stock.js";
 import { MongoMemoryServer } from "mongodb-memory-server";
+import { seedFakeData } from "./seedLocalDB.js";
 
 dotenv.config();
 
@@ -42,8 +43,11 @@ if (!mongoUrl) {
 
 mongoose
   .connect(mongoUrl)
-  .then(() => {
+  .then(async () => {
     console.log("✅ Connected to MongoDB");
+    if (!process.env.MONGO_URL) {
+      await seedFakeData();
+    }
   })
   .catch((err) => {
     console.error("❌ Error connecting to MongoDB:", err.message);
