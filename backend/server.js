@@ -48,8 +48,18 @@ mongoose
   .then(async () => {
     console.log("✅ Connected to MongoDB");
     if (!process.env.MONGO_URL) {
+      // Local dev: seed fake pharmacies, medicines, and stock
       const { seedFakeData } = await import("./seedLocalDB.js");
       await seedFakeData();
+    }
+    // Auto-seed the medicine dictionary if empty (both local and production)
+    const medCount = await Medicine.countDocuments();
+    if (medCount === 0) {
+      console.log("📦 Medicine database is empty. Seeding from NIH RxTerms API...");
+      const { fetchDrugs } = await import("./medicine.js");
+      fetchDrugs().catch(err => console.error("Medicine seed error:", err.message));
+    } else {
+      console.log(`📦 Medicine database has ${medCount} entries.`);
     }
   })
   .catch((err) => {

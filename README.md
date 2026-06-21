@@ -22,7 +22,17 @@
 
 ## 📸 Screenshots
 
-> **Note:** Add screenshots here showcasing the user search, map view, and admin dashboard.
+### 🔍 Medicine Search
+![Find Your Medicine – Home Page](docs/screenshots/search-home.png)
+
+### 🗺️ Search Results & Map
+![Pharmacy search results with map view](docs/screenshots/search-results.png)
+
+### 🌍 Map Exploration
+![Map view showing pharmacies in an area](docs/screenshots/map-view.png)
+
+### 🏪 Pharmacy Profile (Admin)
+![Pharmacy profile management dashboard](docs/screenshots/pharmacy-profile.png)
 
 ---
 

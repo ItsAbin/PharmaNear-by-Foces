@@ -11,10 +11,18 @@
 - Frontend: React (Vite), React Router, Leaflet.
 - Backend: Node.js, Express, JWT, bcrypt, MongoDB (Mongoose).
 - Package Manager: `pnpm` (use exclusively unless user requests otherwise).
+- Local Dev DB: `mongodb-memory-server` (devDependency, dynamically imported).
 
 ## 🏗️ Architecture
 - Current: Monolith (`server.js`). Goal: MVC pattern.
 - DB: `Medicine` (reference), `Pharmacy` (users/locations), `Stock` (links Pharmacy+Medicine with quantity/price).
+- Local dev auto-seeds fake data via `seedLocalDB.js` when `MONGO_URL` is not set.
+
+## 🚢 Deployment
+- Render Blueprint (`render.yaml`) auto-deploys on push to `main`.
+- Backend: `pnpm install --prod` (skips devDeps like mongodb-memory-server).
+- Frontend: Static site built with `pnpm run build`.
+- Active services use `-qv2x` suffix on Render. Non-qv2x are Blueprint duplicates.
 
 **MANDATORY READING FOR AI AGENTS:**
 1. `memory.md`
