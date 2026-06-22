@@ -47,6 +47,10 @@ mongoose
   .connect(mongoUrl)
   .then(async () => {
     console.log("✅ Connected to MongoDB");
+    
+    // Skip seeding during tests to prevent topology closed errors
+    if (process.env.NODE_ENV === "test") return;
+
     if (!process.env.MONGO_URL) {
       // Local dev: seed fake pharmacies, medicines, and stock
       const { seedFakeData } = await import("./seedLocalDB.js");
