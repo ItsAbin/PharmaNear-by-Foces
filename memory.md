@@ -14,7 +14,7 @@ Connects patients with nearby pharmacies to check medication stock. Features use
 
 ### Health Check Endpoint
 
-- Added `GET /api/health`.
+-  `GET /api/health`.
 - Returns JSON with status, uptime, and timestamp.
 
 ## 🗺️ Workflows
