@@ -5,7 +5,7 @@
     "npm": "please-use-pnpm-instead",
     "pnpm": ">=8"
   },
-  "scripts": {
+    "scripts": {
     "test": "pnpm run test:backend && pnpm run test:frontend",
     "test:backend": "cd backend && pnpm test",
     "test:frontend": "cd frontend && pnpm test",
