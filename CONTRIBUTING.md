@@ -38,24 +38,6 @@ We use `pnpm` as our package manager. Please ensure you have Node.js and `pnpm` 
 
    > **🛡️ Security Note:** We strongly recommend prepending `sfw` to all package manager commands (like `sfw pnpm install`) to protect against malicious dependencies.
 
-## 🎨 Editor Configuration
-
-To maintain consistency and ensure clean code formatting across all contributions, we require everyone to enable the **Insert Final Newline** setting in their text editors.
-
-### VS Code
-If you are using Visual Studio Code:
-1. Open your settings (`Ctrl + ,` or `Cmd + ,`).
-2. Search for `Insert Final Newline`.
-3. Check the box for **Files: Insert Final Newline** (or add `"files.insertFinalNewline": true` to your `settings.json`).
-
-### Note on Line Endings
-The repository now includes a `.gitattributes` file that automatically handles line endings (`eol=lf`) on checkout and commit. You only need to manually configure Git's line endings globally or configure VS Code's line ending settings if you cloned the repository *before* `.gitattributes` was added and have not updated/renormalized it since.
-
-### Why is this required?
-- **Git Diff Cleanliness**: When you append lines to a file that doesn't end with a newline, Git views the addition of a newline to the previous line as a modification. This creates unnecessary noise in pull requests and triggers a `\ No newline at end of file` warning.
-- **POSIX/UNIX Standard Compliance**: POSIX defines a line as ending with a newline character (`\n`). Many shell tools, compilers, and parsers expect files to end with a newline and might miss the last line or fail to process it correctly without one.
-- **Consistency**: It prevents formatting conflicts and unnecessary churn between different developers' code editors.
-
 ## 🧪 Testing Your Changes (CRITICAL)
 
 **Before opening a Pull Request, you MUST test your changes locally!**
@@ -117,35 +99,7 @@ Examples:
 3. Run the tests locally using `pnpm run test` and ensure they pass.
 4. Push your branch and open a Pull Request targeting the `main` branch.
 5. Fill out the PR template completely. Link the issue your PR resolves (e.g., "Closes #42").
-   - **Environment Variables**: If your PR introduces new environment variables, you must list them clearly in the designated section of the PR template.
-6. **Update `.env.example` Templates**: If your changes require new environment variables, you must add them to the relevant `.env.example` file(s) (in the root, `backend/`, or `frontend/` folders) with appropriate dummy values and brief comments explaining their purpose.
-7. Await review from maintainers or automated reviewing tools and ensure any requested changes are made.
-
-## 🧹 Preventing Noisy PRs (PR Cleanliness)
-
-To ensure that pull requests are easy to review, please adhere to the following rules:
-
-1. **Do Not Auto-Format Unrelated Code**:
-   - Do **NOT** run automatic code formatters (like Prettier, ESLint `--fix`, or editor-specific auto-formatters) on entire files if you are only editing a few lines.
-   - Forcing style changes on lines of code you are not working on generates huge diffs with hundreds of lines of whitespace/style changes. This makes it extremely difficult for maintainers to spot the actual logic changes.
-   - **Tip**: Configure your IDE to "Format Selection" or "Format Modified Lines Only" instead of "Format on Save" for the entire document.
-
-2. **No Dead or Debug Code**:
-   - Clean up all temporary debugging statement(s) (e.g., `console.log`, `print`, or debug comments), commented-out blocks of code, or unused imports/variables before opening your PR.
-
-3. **Keep PRs Single-focused**:
-   - A pull request should do one thing. If you notice unrelated bugs or refactoring opportunities, please open a separate issue and PR for them. Do not bundle unrelated changes together.
-
-4. **Line Ending Consistency**:
-   - Configure your editor to use `LF` (Unix) line endings. If your editor automatically converts files to `CRLF` (Windows) on save, it will mark the entire file as modified in Git, causing unnecessary diff noise.
-
-## 💬 Communication Etiquette (No @ Mentions)
-
-To maintain a healthy development environment and respect the maintainers' focus and time, please adhere to standard **FOSS (Free and Open Source Software) etiquette** regarding notifications:
-
-* **Do NOT `@` mention maintainers** directly in issues, pull requests, or comments unless it is a critical emergency (e.g., a major security vulnerability or if the live production deployments are completely down).
-* **Why this is important**: Maintainers receive a large volume of notifications and manage open-source projects in their free time. Unneeded direct mentions generate constant interruptions and notification fatigue, which slows down development.
-* Rest assured that all pull requests, issues, and comments are tracked and will be reviewed in due course.
+6. Await review from maintainers or automated reviewing tools and make any requested changes are made.
 
 ## 🏛️ Architecture Goals & Memory
 

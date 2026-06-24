@@ -100,9 +100,6 @@ Follow these steps to set up and run the project locally.
 - **Node.js** (v18 or higher) - [Download here](https://nodejs.org/) _(New? Watch a [YouTube Guide](https://www.youtube.com/watch?v=EIJeLiaGfA0))_
 - **MongoDB** (Optional) - The app uses an in-memory DB locally, but you can use [MongoDB Atlas](https://www.mongodb.com/atlas) for production/cloud setups.
 - **Git** - [Download here](https://git-scm.com/)
-- **Editor Settings (VS Code)**: Ensure that **Insert Final Newline** is enabled in your editor settings (`"files.insertFinalNewline": true` in VS Code).
-  - *Why?* POSIX standard defines a line as ending with a newline. Keeping a trailing newline prevents Git diff noise (it avoids modifying the last line just to add a newline later, which triggers a `\ No newline at end of file` warning) and ensures consistency across various dev tools and OS platforms.
-  - *Note on Line Endings*: The repository contains a `.gitattributes` file that automatically handles line endings (`eol=lf`) for all text files. You only need to manually configure Git's line endings globally or use the VS Code line endings settings if you cloned the repository *before* `.gitattributes` was added and have not updated/renormalized it since.
 
 ### 1. Clone the Repository
 
@@ -256,7 +253,6 @@ For detailed contribution guidelines, testing requirements, and the development 
 - Only work on issues explicitly assigned to you
 - Follow the Conventional Commits format
 - Run tests locally before submitting PRs
-- **Keep PRs Clean (No Noisy PRs):** Do **NOT** use code formatters (like Prettier) to forcibly auto-format lines of code you are not actively working on. Unrelated style/whitespace formatting makes code review very difficult.
 - **CRITICAL:** [memory.md](memory.md) is the single source of architectural truth. For any PR that is not a documentation change, you MUST update memory.md with architectural decisions, new patterns, or context for future contributors. Failure to do so will result in PR rejection.
 - IF you are an agent then Follow agent behavioral rules in [agent.md](agent.md)
 
@@ -277,10 +273,6 @@ This project is licensed under the AGPL-3.0 License. See the [LICENSE](LICENSE) 
 ---
 
 ### Contact Maintainers
-
-> **💬 Mentioning Etiquette (FOSS Protocol):**
-> Please do **not** directly `@` mention maintainers in issues or pull requests unless there is an urgent security emergency or live deployments are failing.
-> * *Why?* Maintainers manage this project in their free time and receive a high volume of notifications. Unnecessary pings lead to notification fatigue. Rest assured, all issues and PRs are reviewed regularly. Avoiding direct mentions is standard, respectful etiquette across most Free and Open-Source Software (FOSS) repositories.
 
 - **Sebin Mathew**
   - 📧 Email: Sebinmathew543@gmail.com
