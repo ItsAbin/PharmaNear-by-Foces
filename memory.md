@@ -121,6 +121,5 @@ Connects patients with nearby pharmacies to check medication stock. Features use
 
 ## 🔗 Related Documentation
 
-- [agent.md](file:///d:/git%20folder/PharmaNear/agent.md) - Strict behavioral rules for AI Agents.
-- [.agents/AGENTS.md](file:///d:/git%20folder/PharmaNear/.agents/AGENTS.md) - Auto-loading workspace customization rules for AI agents.
+- [.agents/AGENTS.md](file:///d:/git%20folder/PharmaNear/.agents/AGENTS.md) - Auto-loading workspace customization rules and behavior guidelines for AI agents.
 - [README.md](file:///d:/git%20folder/PharmaNear/README.md) - Tech Stack, Getting Started guide, and folder structure.

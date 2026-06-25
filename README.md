@@ -267,7 +267,7 @@ For detailed contribution guidelines, testing requirements, and the development 
 - **Monitor and Fix Workflow Checks:** You must monitor the status of the automated GitHub Actions workflows (tests and linting) on your PR. If any checks fail, click "Details" to view the logs, fix the errors yourself, and push the updates. Do not ask maintainers for a review until all automated checks are green.
 - **Keep PRs Clean (No Noisy PRs):** Do **NOT** use code formatters (like Prettier) to forcibly auto-format lines of code you are not actively working on. Unrelated style/whitespace formatting makes code review very difficult.
 - **CRITICAL:** [memory.md](memory.md) is the single source of architectural truth. For any PR that is not a documentation change, you MUST update memory.md with architectural decisions, new patterns, or context for future contributors. Failure to do so will result in PR rejection.
-- **AI Agent Guidelines:** If you are an AI agent, follow the behavioral rules in [agent.md](agent.md). The workspace-specific rules in [.agents/AGENTS.md](.agents/AGENTS.md) will be automatically loaded into your active system instructions by the platform customization engine.
+- **AI Agent Guidelines:** If you are an AI agent, the workspace-specific rules in [.agents/AGENTS.md](.agents/AGENTS.md) will be automatically loaded into your active system instructions by the platform customization engine.
 
 ---
 
