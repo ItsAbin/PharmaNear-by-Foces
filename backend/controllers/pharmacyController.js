@@ -8,13 +8,36 @@ if (!JWT_SECRET) {
     throw new Error("FATAL: JWT_SECRET is required in production but is missing from environment variables.");
 }
 
-export const signup = async (req,res) => {
-try {
+export const signup = async (req, res) => {
+  try {
     const { user_name, owner_name, city, phone_number, password } = req.body;
 
     if (!user_name || !owner_name || !city || !phone_number || !password) {
       return res.status(400).json({ message: "Invalid Entry" });
     }
+
+    // ── Input Validation ──────────────────────────────────────────────────
+    if (password.length < 8) {
+      return res.status(400).json({
+        error: "Validation failed",
+        details: [{ field: "password", message: "Password must be at least 8 characters" }]
+      });
+    }
+
+    if (!/^\d+$/.test(phone_number)) {
+      return res.status(400).json({
+        error: "Validation failed",
+        details: [{ field: "phone_number", message: "Phone number must contain only digits" }]
+      });
+    }
+
+    if (phone_number.length !== 10) {
+      return res.status(400).json({
+        error: "Validation failed",
+        details: [{ field: "phone_number", message: "Phone number must be exactly 10 digits" }]
+      });
+    }
+    // ─────────────────────────────────────────────────────────────────────
 
     // Check if user already exists
     const existingPharmacy = await Pharmacy.findOne({ user_name });

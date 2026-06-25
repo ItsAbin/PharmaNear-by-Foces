@@ -104,8 +104,15 @@ Connects patients with nearby pharmacies to check medication stock. Features use
 - `MONGO_URL` is optional for local development (triggers in-memory MongoDB) but required for production.
 
 **RECORD ANY AND ALL FUTURE ARCHITECTURAL OR IMPORTANT DETAILS IN THIS DOCUMENT.**
-
 ---
+
+### Signup Input Validation (June 2026)
+- Input validation added to `signup` handler in `backend/controllers/pharmacyController.js`.
+- No new dependencies — uses native JavaScript only.
+- `phone_number`: digits only via regex `/^\d+$/`, exactly 10 digits.
+- `password`: minimum 8 characters.
+- Invalid input returns `400 Bad Request` with structured error array: `{ error, details: [{ field, message }] }`.
+- Valid registrations proceed unchanged through existing flow.
 
 ## 🔗 Related Documentation
 
