@@ -192,3 +192,9 @@ For any PR that is **not** a documentation change (i.e., changes to `.md` files)
 - Context for future contributors
 
 **Failure to update memory.md for non-documentation PRs will result in the PR being rejected.** This ensures that architectural knowledge is centralized and accessible to all contributors.
+
+## 🤖 AI Agent Guidelines
+
+If you are an AI assistant or coding agent contributing to this repository:
+- Please refer to [agent.md](agent.md) for strict behavioral rules.
+- Note that workspace customization rules defined in [.agents/AGENTS.md](.agents/AGENTS.md) will be automatically loaded into your active system instructions by your platform.
